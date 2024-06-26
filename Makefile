@@ -23,7 +23,7 @@ runsh:
 	docker run -it --rm --name ffmpeg-alsa --device=/dev/snd:/dev/snd ghcr.io/hajekmi/ffmpeg-alsa /bin/sh
 
 startradio: loadaudio
-	docker run -d --rm --name ffmpeg-alsa --device=/dev/snd:/dev/snd --volume=./conf/asound.conf:/etc/asound.conf ghcr.io/hajekmi/ffmpeg-alsa ffmpeg -i "http://82.142.127.102/color192.mp3" -vn -acodec pcm_s16le -ac 1 -ar 8000 -f alsa hw:LoopRadio,1
+	docker run -d --rm --name ffmpeg-alsa --device=/dev/snd:/dev/snd --volume=./conf/asound.conf:/etc/asound.conf ghcr.io/hajekmi/ffmpeg-alsa ffmpeg -i "http://82.142.127.102/color192.mp3" -vn -acodec pcm_s16le -ac 1 -ar 8000 -f alsa hw:LoopRadio,1 -hide_banner -loglevel error
 
 stopradio:
 	docker container stop -t 3 ffmpeg-alsa
