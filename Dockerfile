@@ -2,6 +2,7 @@ FROM docker.io/alpine:3.20
 MAINTAINER Michal Hajek <michal.hajek@daktela.com>
 LABEL description="FFmpeg with ALSA support"
 LABEL org.opencontainers.image.authors="Michal Hajek <michal.hajek@daktela.com>"
+LABEL org.opencontainers.image.source https://github.com/hajekmi/ffmpeg-alsa
 
 STOPSIGNAL SIGQUIT
 
